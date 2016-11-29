@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Guessing Game</title>
+</head>
+<body onload="do_game()">
+<script>
+    function check_guess() {
+        if (colors.indexOf(guess_input) === -1) {
+            alert("Sorry, I am having some trouble recognizing your color.\n\nPlease try again.");
+        } else if (guess_input > target) {
+            alert("Sorry, your guess is incorrect!\n\nHint: Your color comes sooner in the alphabet.\n\nPlease try again.");
+        } else if (guess_input < target) {
+            alert("Sorry, your guess is incorrect!\n\nHint: Your color comes later in the alphabet.\n\nPlease try again.");
+        } else {
+            solved = true;
+            document.body.style.backgroundColor = target;
+            alert("Congratulations! You are correct!\n\n It took you " + counter +
+                    "guesses to finish the game!\n\nNow you can see the color in the background.");
+        }
+    }
+
+    function do_game() {
+        counter = 0;
+        solved = false;
+        colors = ["OrangeRed", "Gold", "Purple", "LimeGreen", "ForestGreen",
+            "DarkCyan", "SteelBlue", "RoyalBlue", "Maroon", "Black"];
+        colors.sort();
+        target_index = Math.floor((Math.random() * colors.length));
+        target = colors [target_index];
+        alert(target);
+
+        do {
+            counter++;
+            guess_input = prompt("I am pondering several colors.\n\n" + colors.join(", ") +
+                    "\n\nWhich of these colors am I pondering?");
+            check_guess()
+        } while (solved != true);
+
+    }
+</script>
+
+</body>
+</html>

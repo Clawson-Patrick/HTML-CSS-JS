@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Guessing Game</title>
+</head>
+<body onload="do_game()">
+<script>
+    function do_game() {
+        solved = false;
+        colors = ["OrangeRed", "Gold", "Purple", "LimeGreen", "ForestGreen",
+            "DarkCyan", "SteelBlue", "RoyalBlue", "Maroon", "Black"];
+        colors.sort();
+        target_index = Math.floor((Math.random() * colors.length));
+        target = colors [target_index];
+        alert(target);
+        do {
+            var guess_input = prompt
+                    ("I'm pondering several colors:\n\n") + colors.join(",") + "\n\nWhich of these colors am I pondering?";
+        )
+    if (guess_input != target);
+    {
+        solved = false;
+    }
+    else
+    {
+        solved = true;
+    }
+    }
+    while (solved != true);
+    }
+</script>
+
+</body>
+</html>

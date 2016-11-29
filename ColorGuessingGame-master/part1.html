@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Color Guessing Game</title>
+</head>
+<body onload="do_game()">
+<script>
+    function do_game() {
+        solved = false;
+        colors = ["DarkMagenta", "DeepPink", "Ivory", "LightSlateGrey", "LightSkyBlue", "MidnightBlue", "SpringGreen", "Snow", "Turquoise", "Tan", "Tomato", "Yellow"];
+        colors.sort();
+        target_index = Math.floor((Math.random() * colors.length));
+        target = colors[target_index];
+        alert(target);
+        do {
+            var guess_input = prompt("I am thinking of one of these colors:\n\n" + colors.join(", ") + "\n\nWhat color am I thinking of?");
+
+            if (guess_input != target) {
+                solved = false;
+            } else {
+                solved = true;
+            }
+        } while (solved != true);
+    }
+</script>
+</body>
+</html>

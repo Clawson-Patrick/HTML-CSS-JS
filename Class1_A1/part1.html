@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating Website</title>
+</head>
+<body>
+<h1>Please Enter Your Details for Our Dating Website!</h1>
+
+<form action="https://">
+    <fieldset>
+        <legend>Your Face</legend>
+        <label>Your image</label><input type="file"/><br>
+        <label for="preview">Preview</label><img id="preview"/>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your General Details</legend>
+        <label>Name:</label><input type="text"/><br>
+        <label>Gender:</label><input type="radio"/><label>Male</label>
+        <input type="radio"/><label>Female</label><br>
+        <label>Age:</label><input type="number"/><br>
+        <label>Date of Birth:</label> <input type="date"/><br>
+        <label>Favorite Color:</label><input type="color"/><br>
+        <select>
+            <option value="no selection">No Selction</option>
+            <option value="united states">United States</option>
+            <option value="united kingdom">United Kingdom</option>
+            <option value="china">China</option>
+            <option value="japan">Japan</option>
+            <option value="india">India</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Indicators</legend>
+        <label>Height: Short</label>
+        <input type="range" min="0" max="100"/>
+        <label>Tall</label><br>
+        <label>Salary: Poor</label>
+        <input type="range" min="0" max="100"/><label>Rich</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Contact Information</legend>
+        <label>Email:</label> <input type="email"/><br>
+        <label>Mobile:</label> <input type="tel"/><br>
+        <label>Address:</label> <textarea>
+
+            </textarea><br>
+        <label>Method to contact you:</label>
+        <input type="checkbox"/><label>Email</label>
+        <input type="checkbox"/><label>Chat</label>
+        <input type="checkbox"/><label>Dating Site Application</label>
+    </fieldset>
+
+    <input type="submit"/>
+
+
+</form>
+
+</body>
+</html>

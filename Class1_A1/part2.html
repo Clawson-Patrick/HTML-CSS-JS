@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating Website</title>
+
+    <style>
+        fieldset {
+            background: lightyellow;
+            border: yellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+
+        label {
+            width: 180px;
+        }
+
+        .labelText {
+            display: inline-block;
+            text-align: right;
+            vertical-align: text-top;
+        }
+
+        .labelCheckbox {
+            width: auto;
+        }
+
+        .labelRadio {
+            width: auto;
+        }
+
+        .labelRange {
+            text-align: center;
+        }
+
+        .labelTextArea {
+            width: 360px;
+            height: 50px;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+<h1>Please Enter Your Details for Our Dating Website!</h1>
+
+<form action="https://">
+    <fieldset>
+        <legend>Your Face</legend>
+        <label>Your image</label><input type="file"/><br>
+        <label for="preview">Preview</label><img id="preview"/>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your General Details</legend>
+        <label  class="labelText">Name:</label><input type="text"/><br>
+        <label  class="labelText">Gender:</label>
+        <input type="radio"/><label>Male</label>
+        <input type="radio"/><label>Female</label><br>
+        <label class="labelText">Age:</label><input type="number"/><br>
+        <label class="labelText">Date of Birth:</label> <input type="date"/><br>
+        <label class="labelText">Favorite Color:</label><input type="color"/><br>
+        <label class="labelText">Which Country:</label>
+        <select>
+            <option value="no selection">No Selction</option>
+            <option value="united states">United States</option>
+            <option value="united kingdom">United Kingdom</option>
+            <option value="china">China</option>
+            <option value="japan">Japan</option>
+            <option value="india">India</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Indicators</legend>
+        <label class="labelRange">Height: <span class="red">Short</span></label>
+        <input type="range" min="0" max="100"/>
+        <label>Tall</label><br>
+        <label class="labelRange">Salary: <span class="red">Poor</span></label>
+        <input type="range" min="0" max="100"/><label>Rich</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Contact Information</legend>
+        <label>Email:</label> <input type="email"/><br>
+        <label>Mobile:</label> <input type="tel"/><br>
+        <label> class="labelTextArea">Address:</label>
+        <textarea></textarea><br>
+        <label class="labelCheckbox">Method to contact you:</label>
+        <input type="checkbox"/><label>Email</label>
+        <input type="checkbox"/><label>Chat</label>
+        <input type="checkbox"/><label>Dating Site Application</label>
+    </fieldset>
+
+    <input type="submit"/>
+
+
+</form>
+
+</body>
+</html>

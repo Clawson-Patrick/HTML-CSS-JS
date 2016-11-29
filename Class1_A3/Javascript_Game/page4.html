@@ -1,0 +1,86 @@
+<!--   FILE1 Leftside HTML/CSS3(Inline) -->
+<!--   FILE2 Rightside HTML/CSS3(Inline) -->
+<!--   FILE3 Javascript source code for the application (External) -->
+<!--   FILE4 Both Leftside & Rightside HTML/CSS3 (Inline) & Javascript source code (Inline) -->
+<!DOCTYPE html>
+<html>
+<!--   The HTML will be separated based on div assignment -->
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <!--   The CSS will be left inline each file to keep priority on each side -->
+    <style media="screen">
+        /*img will be used throughout the entire application to resize the images used (Will be in both FILE1 & FILE2)*/
+        img {
+            position: absolute;
+        }
+
+        /* div will be used throughout the application to keep  */
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+
+        /* leftSIde is used exclusivley to position the left div (WIll be in FILE1) */
+        #leftSide {
+            left: 0px;
+            border-right: 1px solid black;
+        }
+
+        /* rightSide is used exclusivley to position the right div (Will be in FILE2) */
+        #rightSide {
+            left: 500px;
+            border-left: 1px solid black;
+        }
+    </style>
+    ​
+</head>
+<body>
+<!-- The Leftside Div is what contains the img generation ( Will be used in FILE1 )  -->
+<div id="leftSide">
+    <br></div>
+<!-- The rightSide Div is what contains the img pairing ( Will be used in FILE2 ) -->
+<div id="rightSide">
+</div>
+<!-- The Javascript source code for the application is used for the generation of images the manipulation of DOM and any further functionality ( Will be used in FILE3 ) -->
+<script type="text/javascript">
+    var theBody = document.getElementsByTagName('body')[0];
+    var theleftSide = document.getElementById('leftSide');
+    var therightSide = document.getElementById('rightSide');
+    var numberOfFaces = 5;
+    function generateFaces() {
+        for (i = 0; i < numberOfFaces; i++) {
+            var img = document.createElement('img');
+            img.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+            img.style.top = Math.random() * 400 + "px";
+            img.style.left = Math.random() * 400 + "px";
+            theleftSide.appendChild(img);
+        }
+        var leftSideImages = theleftSide.cloneNode(true);
+        leftSideImages.removeChild(leftSideImages.childNodes[leftSideImages.childNodes.length - 1]);
+        therightSide.appendChild(leftSideImages);
+        // When you click the Leftside the images begin to generate until the limit of 5 is reached
+        theleftSide.lastChild.addEventListener("mousedown", function (event) {
+            event.stopPropagation();
+            numberOfFaces += 5;
+            theleftSide.innerHTML = "";
+            therightSide.innerHTML = "";
+            generateFaces();
+        }, false);
+    }
+
+    // When you click off of the main two divs you recieve the Game Over message & the function generateFaces() ends
+    theBody.addEventListener("mousedown", function () {
+        alert('Game Over');
+        theBody.onClick = null;
+        theleftSide.innerHTML = "";
+        therightSide.innerHTML = "";
+        numberOfFaces = 5;
+        generateFaces();
+    }, false);
+    // Runs the function (Executes the function when the page loads)
+    generateFaces();
+</script>
+</body>
+</html>
